@@ -6,6 +6,7 @@ import org.jsondoc.core.pojo.ApiDoc
 import org.jsondoc.core.util.JSONDocUtils
 import org.restapidoc.annotation.*
 import org.restapidoc.pojo.*
+import org.springframework.http.MediaType
 
 import java.beans.Introspector
 import java.lang.reflect.Method
@@ -33,23 +34,23 @@ public class JSONDocUtilsLight extends JSONDocUtils {
 
 
     public JSONDocUtilsLight(grailsApplication) {
-        DEFAULT_TYPE = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultResponseType
-        CONTROLLER_PREFIX = grailsApplication.mergedConfig.grails.plugins.restapidoc.controllerPrefix
-        CONTROLLER_SUFFIX = grailsApplication.mergedConfig.grails.plugins.restapidoc.controllerSuffix
-        DEFAULT_ERROR_ALL = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultErrorAll
-        DEFAULT_ERROR_GET = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultErrorGet
-        DEFAULT_ERROR_POST = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultErrorPost
-        DEFAULT_ERROR_PUT = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultErrorPut
-        DEFAULT_ERROR_DELETE = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultErrorDelete
-        VERB_PER_METHOD_PREFIX = grailsApplication.mergedConfig.grails.plugins.restapidoc.verbPerMethodPrefix
-        PATH_PER_METHOD_PREFIX = grailsApplication.mergedConfig.grails.plugins.restapidoc.pathPerMethodPrefix
-        DEFAULT_FORMAT = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultFormat
-        DEFAULT_FORMAT_NAME = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultFormatString
-        GRAILS_DOMAIN_DEFAULT_TYPE = grailsApplication.mergedConfig.grails.plugins.restapidoc.grailsDomainDefaultType
-        DOMAIN_OBJECT_FIELDS = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultObjectFields
-        DEFAULT_PARAMS_QUERY_ALL = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultParamsQueryAll
-        DEFAULT_PARAMS_QUERY_SINGLE = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultParamsQuerySingle
-        DEFAULT_PARAMS_QUERY_MULTIPLE = grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultParamsQueryMultiple
+        DEFAULT_TYPE = grailsApplication.config.grails.plugins.restapidoc.defaultResponseType?: MediaType.APPLICATION_JSON_VALUE
+        CONTROLLER_PREFIX = grailsApplication.config.grails.plugins.restapidoc.controllerPrefix
+        CONTROLLER_SUFFIX = grailsApplication.config.grails.plugins.restapidoc.controllerSuffix
+        DEFAULT_ERROR_ALL = grailsApplication.config.grails.plugins.restapidoc.defaultErrorAll
+        DEFAULT_ERROR_GET = grailsApplication.config.grails.plugins.restapidoc.defaultErrorGet
+        DEFAULT_ERROR_POST = grailsApplication.config.grails.plugins.restapidoc.defaultErrorPost
+        DEFAULT_ERROR_PUT = grailsApplication.config.grails.plugins.restapidoc.defaultErrorPut
+        DEFAULT_ERROR_DELETE = grailsApplication.config.grails.plugins.restapidoc.defaultErrorDelete
+        VERB_PER_METHOD_PREFIX = grailsApplication.config.grails.plugins.restapidoc.verbPerMethodPrefix
+        PATH_PER_METHOD_PREFIX = grailsApplication.config.grails.plugins.restapidoc.pathPerMethodPrefix
+        DEFAULT_FORMAT = grailsApplication.config.grails.plugins.restapidoc.defaultFormat
+        DEFAULT_FORMAT_NAME = grailsApplication.config.grails.plugins.restapidoc.defaultFormatString
+        GRAILS_DOMAIN_DEFAULT_TYPE = grailsApplication.config.grails.plugins.restapidoc.grailsDomainDefaultType
+        DOMAIN_OBJECT_FIELDS = grailsApplication.config.grails.plugins.restapidoc.defaultObjectFields
+        DEFAULT_PARAMS_QUERY_ALL = grailsApplication.config.grails.plugins.restapidoc.defaultParamsQueryAll
+        DEFAULT_PARAMS_QUERY_SINGLE = grailsApplication.config.grails.plugins.restapidoc.defaultParamsQuerySingle
+        DEFAULT_PARAMS_QUERY_MULTIPLE = grailsApplication.config.grails.plugins.restapidoc.defaultParamsQueryMultiple
     }
 
 //    

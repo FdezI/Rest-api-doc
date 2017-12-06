@@ -53,11 +53,11 @@ class BuildPathMap extends AnsiConsoleUrlMappingsRenderer {
                 if (urlMapping?.actionName) {
                     // urlMapping can be either a string or a closure that returns the result
                     if (urlMapping?.actionName instanceof String) {
-                        rules.addRule(controller.toString(), urlMapping.actionName.toString(), cleanString(urlPattern), urlMapping.httpMethod, grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultFormat)
+                        rules.addRule(controller.toString(), urlMapping.actionName.toString(), cleanString(urlPattern), urlMapping.httpMethod, grailsApplication.config.grails.plugins.restapidoc.defaultFormat)
                     } else {
                         urlMapping?.actionName.each { actName ->
                             urlPattern = urlPattern.replace("\${", "{") //replace ${format} with {format}
-                            rules.addRule(controller.toString(), actName.value, cleanString(urlPattern), actName.key, grailsApplication.mergedConfig.grails.plugins.restapidoc.defaultFormat)
+                            rules.addRule(controller.toString(), actName.value, cleanString(urlPattern), actName.key, grailsApplication.config.grails.plugins.restapidoc.defaultFormat)
                         }
                     }
                 }

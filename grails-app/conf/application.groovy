@@ -1,4 +1,4 @@
-import org.springframework.http.MediaType
+
 
 grails {
     plugins{
@@ -14,7 +14,7 @@ grails {
 
             defaultFormat = "json"
 
-            defaultResponseType = MediaType.APPLICATION_JSON_VALUE
+            defaultResponseType = null
             controllerPrefix = ""
             controllerSuffix = "Controller"
 

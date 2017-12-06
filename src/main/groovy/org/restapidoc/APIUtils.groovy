@@ -13,11 +13,11 @@ class APIUtils {
 
     static def buildApiRegistry(grailsApplication) {
 
-        String VERSION = grailsApplication.mergedConfig.grails.plugins.restapidoc.docVersion
-        String BASEPATH = grailsApplication.mergedConfig.grails.plugins.restapidoc.basePath
-        String POJO_PKG_TO_SCAN = grailsApplication.mergedConfig.grails.plugins.restapidoc.packageToScan
+        String VERSION = grailsApplication.config.grails.plugins.restapidoc.docVersion
+        String BASEPATH = grailsApplication.config.grails.plugins.restapidoc.basePath
+        String POJO_PKG_TO_SCAN = grailsApplication.config.grails.plugins.restapidoc.packageToScan
 
-        String CUSTOM_CLASS_NAME = grailsApplication.mergedConfig.grails.plugins.restapidoc.customClassName
+        String CUSTOM_CLASS_NAME = grailsApplication.config.grails.plugins.restapidoc.customClassName
         def customDoc = null
         if (CUSTOM_CLASS_NAME) {
             ClassLoader classLoader = APIUtils.getClassLoader();
