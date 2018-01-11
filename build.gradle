@@ -10,7 +10,7 @@ buildscript {
 }
 
 version "0.1"
-group "rest.api.doc"
+group "com.github.FdezI"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
